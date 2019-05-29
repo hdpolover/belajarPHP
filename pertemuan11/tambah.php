@@ -35,12 +35,11 @@
         } else {
             $result = mysqli_query($mysqli, $sql_insert);
             
-            $berhasilInput = 
-            //header("Location: tampil.php");
+            $berhasilInput = "Data berhasil ditambahkan.";
         }
     }
     ?>
-    
+
     <div class="container">
         <div class="container-fluid">
             <div class="row">
@@ -49,6 +48,11 @@
                     if (isset($nama_error)) { 
                         echo "<div class=\"alert alert-danger\" role=\"alert\">";
                         echo "$nama_error";
+                        echo "</div>";
+                    } elseif (isset($berhasilInput)) {
+                        echo "<div class=\"alert alert-success\" role=\"alert\">";
+                        echo "$berhasilInput";
+                        echo "<a href=\"tampil.php\" class=\"alert-link\"> Kembali ke menu tampil.</a>";
                         echo "</div>";
                     }
                     ?>
